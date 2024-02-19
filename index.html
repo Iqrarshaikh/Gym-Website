@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .validity-status {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .valid {
+            color: green;
+        }
+
+        .expired {
+            color: red;
+        }
+    </style>
+    <title>Gym Membership Validity</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="member-info">
+        <h2>Member Information</h2>
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Membership Start Date:</strong> January 1, 2023</p>
+        <p><strong>Validity Days:</strong> 365 days</p>
+    </div>
+
+    <div class="validity-status">
+        Membership Status:
+        <span class="valid">Valid</span>
+        <!-- or use <span class="expired">Expired</span> -->
+    </div>
+</div>
+
+</body>
+</html>
