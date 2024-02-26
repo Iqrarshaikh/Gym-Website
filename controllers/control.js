@@ -4,6 +4,8 @@ const userModel = require("../models/userModel");
 // const productModel = require("../models/productModel");
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+const packageJsonData = require('.././packageData.json')
+
 //GET
 exports.loginPage = catchAsyncErrors(
     async (req, res, next) => {
@@ -79,37 +81,55 @@ exports.programsPage = catchAsyncErrors(async (req, res) => {
 exports.packagesplanPage = catchAsyncErrors(async (req, res) => {
     res.render('packagesPlan', { layout: 'packagesPlan' });
 });
-exports.productOverviewPage = catchAsyncErrors(async (req, res) => {
-    // const verify = jwt.verify(req.token, process.env.JWT_SECRET);
-    const product = await productModel.findById({ _id: req.params.id });
-    console.log(product);
-    let totalStar = product.reviews.length * 5;
-    let receivedStar = 0;
-    let starObj = {
-        1: 0,
-        2: 0,
-        3: 0,
-        4: 0,
-        5: 0
-    };
-    let starArr = []; ``;
 
-    product.reviews.forEach((review) => {
-        receivedStar += review.rating;
-        starObj[review.rating]++;
-    });
-    for (let star in starObj) {
-        starArr.push(Math.round(starObj[star] / 12 * 100));
+exports.packagesplanPageOverview = catchAsyncErrors(async (req, res) => {
+
+    if (req.params.id === 'monthlyPlan') {
+        return res.render('packageOverview', { data: packageJsonData.packages[0] });
+    } if (req.params.id === 'quaterlyPlan') {
+        return res.render('packageOverview', { data: packageJsonData.packages[1] });
+    } if (req.params.id === 'halfYearPlan') {
+        return res.render('packageOverview', { data: packageJsonData.packages[2] });
+    } if (req.params.id === 'yearlyPlan') {
+        return res.render('packageOverview', { data: packageJsonData.packages[3] });
     }
-    let totalRating = Math.round((receivedStar / totalStar) * 100);
-    let averageRating = totalRating / 20;
-    // console.log('total star', totalStar);
-    // console.log('received star', receivedStar);
-    // console.log('overAll Rating', totalRating, '%');
-    // console.log('starArr', starArr);
-    return res.render('productOverview', { layout: 'productOverview', product, token: req.token, averageRating, starArr });
+    else {
+        res.redirect('/')
+    }
 
 });
+
+// exports.packagesplanPageOverview = catchAsyncErrors(async (req, res) => {
+//     // const verify = jwt.verify(req.token, process.env.JWT_SECRET);
+//     const product = await productModel.findById({ _id: req.params.id });
+//     console.log(product);
+//     let totalStar = product.reviews.length * 5;
+//     let receivedStar = 0;
+//     let starObj = {
+//         1: 0,
+//         2: 0,
+//         3: 0,
+//         4: 0,
+//         5: 0
+//     };
+//     let starArr = []; ``;
+
+//     product.reviews.forEach((review) => {
+//         receivedStar += review.rating;
+//         starObj[review.rating]++;
+//     });
+//     for (let star in starObj) {
+//         starArr.push(Math.round(starObj[star] / 12 * 100));
+//     }
+//     let totalRating = Math.round((receivedStar / totalStar) * 100);
+//     let averageRating = totalRating / 20;
+//     // console.log('total star', totalStar);
+//     // console.log('received star', receivedStar);
+//     // console.log('overAll Rating', totalRating, '%');
+//     // console.log('starArr', starArr);
+//     return res.render('productOverview', { layout: 'productOverview', product, token: req.token, averageRating, starArr });
+
+// });
 // exports.shoppingCartPage = catchAsyncErrors(async (req, res) => {
 
 //     res.render('shoppingCart', { layout: 'shoppingCart' });
