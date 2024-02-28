@@ -3,30 +3,72 @@
         {
             "id": 1,
             "title": "1-Month Membership",
-            "description": "Get access to our gym facilities for 3 months.",
-            "image": "https://example.com/images/3month_membership.jpg",
-            "price": 99.99
+            "description": "Experience the benefits of our gym facilities for 1 month. Access state-of-the-art equipment, join exciting fitness classes, and kickstart your fitness journey. Stay motivated and achieve your goals with our supportive community.",
+            "image": "/static/img/gymPlans/img4.jpg",
+            "price": 1500,
+            "highlights": [
+                "1 month access to gym facilities",
+                "State-of-the-art equipment",
+                "Exciting fitness classes",
+                "Supportive community"
+            ],
+            "details": "Ideal for those looking to try out our gym and experience the benefits for a short duration. Flexible membership options available after the trial period."
         },
         {
             "id": 2,
             "title": "3-Month Membership",
-            "description": "Get access to our gym facilities for 3 months.",
-            "image": "https://example.com/images/3month_membership.jpg",
-            "price": 99.99
+            "description": "Commit to your fitness goals with a 3-month membership. Enjoy unlimited access to our gym facilities, including personalized workout plans and expert guidance. Elevate your fitness routine and witness positive transformations.",
+            "image": "/static/img/gymPlans/img1.jpg",
+            "price": 4000,
+            "highlights": [
+                "3 months unlimited access",
+                "Personalized workout plans",
+                "Expert guidance",
+                "Positive transformations"
+            ],
+            "details": "Perfect for those who want a longer commitment with additional personalized support for their fitness journey. Access to nutritional guidance and diet planning for a holistic approach."
         },
         {
             "id": 3,
             "title": "6-Month Membership",
-            "description": "Get access to our gym facilities for 6 months.",
-            "image": "https://example.com/images/6month_membership.jpg",
-            "price": 179.99
+            "description": "Embark on a fitness journey with our 6-month membership. Benefit from extended access to top-notch gym amenities, wellness programs, and exclusive member events. Make a lasting commitment to a healthier, happier you.",
+            "image": "/static/img/gymPlans/img2.jpg",
+            "price": 7500,
+            "highlights": [
+                "6 months extended access",
+                "Top-notch gym amenities",
+                "Wellness programs",
+                "Exclusive member events"
+            ],
+            "details": "For those seeking a more extended commitment with added wellness programs and exclusive events. Complimentary fitness assessments and progress tracking."
         },
         {
             "id": 4,
             "title": "1-Year Membership",
-            "description": "Get access to our gym facilities for 1 year.",
-            "image": "https://example.com/images/1year_membership.jpg",
-            "price": 299.99
+            "description": "Transform your lifestyle with our 1-year membership. Enjoy uninterrupted access to our gym, receive personalized training plans, and become part of a thriving fitness community. Invest in your well-being for a year of positive change.",
+            "image": "/static/img/gymPlans/img5.jpg",
+            "price": 10000,
+            "highlights": [
+                "1 year uninterrupted access",
+                "Personalized training plans",
+                "Thriving fitness community",
+                "Positive lifestyle change"
+            ],
+            "details": "A comprehensive package for a year-long commitment to health and fitness with personalized support. Exclusive member-only events and discounts on additional services."
+        },
+        {
+            "id": 5,
+            "title": "Premium Membership",
+            "description": "Experience the ultimate fitness journey with our Premium Membership. Enjoy exclusive perks, personalized coaching, and unlimited access for a year. Elevate your fitness experience and achieve remarkable results.",
+            "image": "/static/img/gymPlans/img3.jpg",
+            "price": 15000,
+            "highlights": [
+                "Ultimate fitness journey",
+                "Exclusive perks",
+                "Personalized coaching",
+                "1 year unlimited access"
+            ],
+            "details": "For those who want the best-in-class experience with exclusive perks and personalized coaching throughout the year. Priority access to new equipment and priority scheduling for classes."
         }
     ]
 }

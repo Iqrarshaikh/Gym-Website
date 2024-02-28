@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { loginPage, signUpPage, forgotPage, createPasswordPage, packagesplanPage, programsPage, verifyEmailPage, verifyNumberPage, verifyOtpPage, pageNotFound, packagesplanPageOverview, } = require('../controllers/control.js');
+const { loginPage, signUpPage, forgotPage, createPasswordPage, packagesplanPage, programsPage, verifyEmailPage, verifyNumberPage, verifyOtpPage, pageNotFound, packagesplanPageOverview, exercises, exerciseOverview, exerciseCategory, joinPackageForm} = require('../controllers/control.js');
 // const { getAllProducts } = require('../controllers/productController');
 const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth.js');
 const { sendSMS } = require('../utils/sendSMS.js');
@@ -15,7 +15,12 @@ router.get('/auth/verify-number', verifyNumberPage);
 router.get('/auth/create-password', createPasswordPage);
 router.get('/programs', programsPage);
 router.get('/packages-plan', packagesplanPage);
-router.get('/packages-plan/overview/:id', packagesplanPageOverview)
+router.get('/packages-plan/:id', packagesplanPageOverview)
+router.get('/packages-plan/:id/join', joinPackageForm);
+router.get('/exercises', exercises)
+router.get('/exercise/:category', exerciseCategory)
+router.get('/exercise/:category/:id', exerciseOverview)
+
 // router.get('/product/:id', isAuthenticatedUser, productOverviewPage);
 // router.get('/order/:id/shipping', isAuthenticatedUser, shippingPage);
 // router.get('/order/:id/confirm-order', isAuthenticatedUser, confirmOrderPage);

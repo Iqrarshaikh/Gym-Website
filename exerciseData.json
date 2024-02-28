@@ -1,0 +1,164 @@
+{
+    "type": [
+        {
+            "id": 1,
+            "title": "Cardio",
+            "description": "Cardiovascular exercise is any exercise that raises your heart rate and increases blood circulation. It helps improve heart health, endurance, and overall fitness.",
+            "image": "data:image/jpeg;base64,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"
+        },
+        {
+            "id": 2,
+            "title": "Olympic Weightlifting",
+            "description": "Olympic weightlifting is a sport that involves lifting weights in a precise manner to maximize strength and power. It includes movements like the clean and jerk and the snatch.",
+            "image": "https://example.com/olympic_weightlifting_image.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Plyometrics",
+            "description": "Plyometrics, also known as jump training, involves explosive movements to build power. It often includes exercises like jumping, bounding, and quick, powerful movements.",
+            "image": "https://example.com/plyometrics_image.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Powerlifting",
+            "description": "Powerlifting is a strength sport that involves three main lifts: the squat, bench press, and deadlift. It focuses on pure strength and maximal lifts in these movements.",
+            "image": "https://example.com/powerlifting_image.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Strength",
+            "description": "Strength training involves exercises that improve muscle strength and endurance. It can include weightlifting, bodyweight exercises, and resistance training.",
+            "image": "https://example.com/strength_training_image.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Stretching",
+            "description": "Stretching exercises improve flexibility and range of motion. They can be static stretches, dynamic stretches, or a combination of both.",
+            "image": "https://example.com/stretching_image.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Strongman",
+            "description": "Strongman training focuses on functional strength and involves lifting, carrying, and moving heavy and awkward objects. It's a test of overall strength and endurance.",
+            "image": "https://example.com/strongman_training_image.jpg"
+        }
+    ],
+    "muscle": [
+        {
+          "id": 1,
+          "title": "Abdominals",
+          "description": "The abdominal muscles, often referred to as abs, are a group of muscles in the abdomen that help support the spine, assist in breathing, and provide movement and stability to the core.",
+          "image": "/static/img/muscleParts/abdominals.jpg"
+        },
+        {
+          "id": 2,
+          "title": "Abductors",
+          "description": "Abductors are muscles that move a part of the body away from the midline. In fitness, abductors often refer to the muscles of the hips and thighs that move the legs away from the center of the body.",
+          "image": "/static/img/muscleParts/abductors.jpg"
+        },
+        {
+          "id": 3,
+          "title": "Adductors",
+          "description": "Adductors are muscles that move a part of the body toward the midline. In fitness, adductors often refer to the muscles of the inner thigh that bring the legs together.",
+          "image": "/static/img/muscleParts/adductors.jpg"
+        },
+        {
+          "id": 4,
+          "title": "Biceps",
+          "description": "The biceps brachii, commonly known as the biceps, are muscles on the front of the upper arm that help in flexing the elbow and rotating the forearm.",
+          "image": "/static/img/muscleParts/biceps.jpg"
+        },
+        {
+          "id": 5,
+          "title": "Calves",
+          "description": "The calf muscles, or gastrocnemius and soleus muscles, are located at the back of the lower leg. They are responsible for pointing the foot and bending the knee.",
+          "image": "/static/img/muscleParts/calves.jpg"
+        },
+        {
+          "id": 6,
+          "title": "Chest",
+          "description": "The chest muscles, including the pectoralis major and minor, are located in the front of the upper body. They are responsible for movements of the shoulder joint.",
+          "image": "/static/img/muscleParts/chest.jpg"
+        },
+        {
+          "id": 7,
+          "title": "Forearms",
+          "description": "The forearm muscles, including the flexors and extensors, are located between the elbow and the wrist. They are responsible for various wrist and finger movements.",
+          "image": "/static/img/muscleParts/forearms.jpg"
+        },
+        {
+          "id": 8,
+          "title": "Glutes",
+          "description": "The gluteal muscles, or glutes, are located in the buttocks. They are responsible for hip movement and play a crucial role in many lower body movements.",
+          "image": "/static/img/muscleParts/glutes.jpg"
+        },
+        {
+          "id": 9,
+          "title": "Hamstrings",
+          "description": "The hamstring muscles are located at the back of the thigh. They are responsible for bending the knee and extending the hip.",
+          "image": "/static/img/muscleParts/hamstrings.jpg"
+        },
+        {
+          "id": 10,
+          "title": "Lats",
+          "description": "The latissimus dorsi, commonly known as the lats, are large muscles in the back. They are responsible for movements of the shoulder joint and pulling motions.",
+          "image": "/static/img/muscleParts/lats.jpg"
+        },
+        {
+          "id": 11,
+          "title": "Lower Back",
+          "description": "The lower back muscles, including the erector spinae, are located in the lumbar region of the spine. They provide support and stability to the spine.",
+          "image": "/static/img/muscleParts/lower-back.jpg"
+        },
+        {
+          "id": 12,
+          "title": "Middle Back",
+          "description": "The middle back muscles, often referred to as the thoracic erector spinae, are located in the middle portion of the back. They help with posture and stability.",
+          "image": "/static/img/muscleParts/middle-back.jpg"
+        },
+        {
+          "id": 13,
+          "title": "Neck",
+          "description": "The neck muscles, including the sternocleidomastoid and trapezius, are located in the neck region. They are responsible for various movements of the head and neck.",
+          "image": "/static/img/muscleParts/neck.jpg"
+        },
+        {
+          "id": 14,
+          "title": "Quadriceps",
+          "description": "The quadriceps, or quads, are a group of four muscles on the front of the thigh. They are responsible for extending the knee and flexing the hip.",
+          "image": "/static/img/muscleParts/quadriceps.jpg"
+        },
+        {
+          "id": 15,
+          "title": "Traps",
+          "description": "The trapezius muscles, commonly known as traps, are located in the upper back and neck. They are responsible for shoulder movements and stabilizing the shoulder blades.",
+          "image": "/static/img/muscleParts/traps.jpg"
+        },
+        {
+          "id": 16,
+          "title": "Triceps",
+          "description": "The triceps brachii, commonly known as the triceps, are muscles on the back of the upper arm. They are responsible for extending the elbow.",
+          "image": "/static/img/muscleParts/triceps.jpg"
+        }
+    ],
+    "difficulty" : [
+        {
+          "id": 1,
+          "title": "Beginner",
+          "description": "Suitable for those new to fitness, focusing on foundational exercises and techniques.",
+          "image": "https://example.com/beginner_image.jpg"
+        },
+        {
+          "id": 2,
+          "title": "Intermediate",
+          "description": "For individuals with some fitness experience, looking to progress and challenge themselves.",
+          "image": "https://example.com/intermediate_image.jpg"
+        },
+        {
+          "id": 3,
+          "title": "Expert",
+          "description": "Designed for advanced athletes with extensive fitness knowledge and skill.",
+          "image": "https://example.com/expert_image.jpg"
+        }
+    ]
+}

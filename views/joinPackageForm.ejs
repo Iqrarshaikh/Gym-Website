@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cd.tailwindcss.com">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: rgb(247, 233, 233);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        .form-left,
+        .form-right {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        .input-wrapper {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="time"],
+        select,
+        input[type="file"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            width: 20%;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #515050;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="text-center mt-6 text-2xl">Enter all details</h2>
+    <section class="container">
+        <form>
+            <div class="w-full flex gap-8">
+                <div class="form-left">
+                    <div class="input-wrapper">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="" placeholder="Your Fullname" required>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="" placeholder="your email@mail.com" required>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="">Package Plan:</label>
+                        <input type="text" name="plan" id="" class="cursor-not-allowed" value='<%= data.id %>' readonly>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label>Gender:</label>
+                        <label for="male">
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            Male
+                        </label>
+                        <label for="female">
+                            <input type="radio" id="female" name="gender" value="female">
+                            Female
+                        </label>
+                        <label for="other">
+                            <input type="radio" id="other" name="gender" value="other">
+                            Other
+                        </label>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" name="phone" id="" required>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="phone">Membership Fee:</label>
+                        <input type="number" name="phone" id="" readonly class="cursor-not-allowed" value="3500" >
+                    </div>
+
+
+
+                    <!-- <div class="input-wrapper">
+                        <label for="positions">Package Plan:</label>
+                        <select name="positions" class="cursor-not-allowed" required>
+                            <option value="select">${}</option>
+                        </select>
+                    </div> -->
+                </div>
+
+                <div class="form-right">
+                    <!-- <div class="input-wrapper">
+                        <label for="positions">Education:</label>
+                        <select name="positions" required>
+                            <option value="select">Select</option>
+                            <option value="junior-college">Junior College</option>
+                            <option value="bachelors">Bachelor's</option>
+                            <option value="masters">Master's</option>
+                        </select>
+                    </div> -->
+
+                    <div class="input-wrapper">
+                        <label for="city">City:</label>
+                        <input type="text" name="city" id="" required>
+                    </div>
+
+
+                    <div class="input-wrapper">
+                        <label for="pin-code">Pin Code:</label>
+                        <input type="number" name="pin-code" id="" required>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="education">Work Experience:</label>
+                        <textarea name="" id="" rows="5" required></textarea>
+                    </div>
+
+                    <!-- <div class="input-wrapper">
+                        <label for="skills">Skills:</label>
+                        <label for="html">
+                            <input type="checkbox" id="html" name="html" value="html">
+                            HTML
+                        </label>
+                        <label for="css">
+                            <input type="checkbox" id="css" name="css" value="css">
+                            CSS
+                        </label>
+                        <label for="JavaScript">
+                            <input type="checkbox" id="JavaScript" name="JavaScript" value="JavaScript">
+                            JavaScript
+                        </label>
+                        <label for="testing">
+                            <input type="checkbox" id="testing" name="testing" value="testing">
+                            Testing
+                        </label>
+                    </div> -->
+
+
+
+                    <div class="input-wrapper">
+                        <label for="call">Prefered time for call:</label>
+                        <input type="time" name="call" id="" required>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="resume">Upload resume:</label>
+                        <input type="file" name="resume" id="" required>
+                    </div>
+                </div>
+            </div>
+            <div class="submit">
+                <button class="bg-[#f9ac54]" type="submit">Submit</button>
+                <button class="bg-[#f9ac54]" type="submit">Reset</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

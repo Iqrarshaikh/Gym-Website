@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: #111317;
+    }
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 10px 15px;
+    }
+    h1{
+        text-align: center;
+        font-size: 1.7rem;
+        color: white;
+    }
+    .card-wrapper{
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 15px;
+        justify-content: space-between;
+    }
+    .card {
+        background-color: #1f2125;
+        width: 32%;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 7px;
+        /* margin: 16px; */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        color: white;
+    }
+
+    .card:hover {
+        background-color: #35373b;
+        border-color: #f9ac54;
+    }
+
+    .card h2 {
+        margin-top: 0;
+    }
+
+    .card p {
+        margin: 8px 0;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 8px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Overview</h1>
+        <div class="card-wrapper">
+            
+        </div>
+    </div>
+    <script>
+        const cardWrapper = document.querySelector('.card-wrapper')
+        console.log(cardWrapper)
+        function apiCall(method, url, data) {
+            return new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.open(method, url);
+                xhr.setRequestHeader(
+                    "X-Api-Key",
+                    "6bMqEqLNGU0cxzr1p2336PK1JJc4kx9Ir1bpn9ko"
+                ),
+                    xhr.setRequestHeader("Content-type", "application/json"),
+                    (xhr.onreadystatechange = () => {
+                        if (xhr.readyState == 4) {
+                            if (xhr.status == 200) {
+                                resolve(JSON.parse(xhr.response));
+                            } else {
+                                reject(xhr.status);
+                            }
+                        }
+                    });
+                xhr.send(JSON.stringify(data));
+            });
+        }
+
+        apiCall("GET", "https://api.api-ninjas.com/v1/exercises?<%= category %>=<%= id %>", {})
+            .then((res) => {
+                res.map((e, i) => {
+                    console.log(e.instructions.length)
+                    cardWrapper.innerHTML += `
+                    <div class="card">    
+                        <h2><strong>Name:</strong> ${e.name}</h2>    
+                        <p><strong>Difficulty:</strong> ${e.difficulty}</p>    
+                        <p><strong>Equipment:</strong> ${e.equipment}</p>    
+                        <p><strong>Instructions:</strong> ${e.instructions}</p>    
+                        <p><strong>Muscle:</strong> ${e.muscle}</p>    
+                        <p><strong>Type:</strong> ${e.type}</p>    
+                        
+                    </div>
+                    `
+                        // console.log(e, i)
+                        // <img src="path_to_image.jpg" alt="Exercise Image">
+                })
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+    </script>
+</body>
+
+</html>
