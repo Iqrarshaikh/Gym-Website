@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { loginPage, signUpPage, forgotPage, createPasswordPage, packagesplanPage, programsPage, verifyEmailPage, verifyNumberPage, verifyOtpPage, pageNotFound, packagesplanPageOverview, exercises, exerciseOverview, exerciseCategory, joinPackageForm, programsPageOverview} = require('../controllers/control.js');
+const { loginPage, signUpPage, forgotPage, createPasswordPage, packagesplanPage, programsPage, paymentPage, payment, verifyEmailPage, verifyNumberPage, verifyOtpPage, pageNotFound, packagesplanPageOverview, exercises, exerciseOverview, exerciseCategory, joinPackageForm, programsPageOverview } = require('../controllers/control.js');
 // const { getAllProducts } = require('../controllers/productController');
 const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth.js');
 const { sendSMS } = require('../utils/sendSMS.js');
@@ -15,16 +15,18 @@ router.get('/auth/verify-number', verifyNumberPage);
 router.get('/auth/create-password', createPasswordPage);
 // Program
 router.get('/programs', programsPage);
-router.get('/programs/:id', programsPageOverview);
+router.get('/programs/:id', isAuthenticatedUser, programsPageOverview);
 router.get('/programs/:id/join', joinPackageForm);
 // Package
 router.get('/packages-plan', packagesplanPage);
-router.get('/packages-plan/:id', packagesplanPageOverview)
-router.get('/packages-plan/:id/join', joinPackageForm);
+router.get('/packages-plan/:id', packagesplanPageOverview);
+router.get('/packages-plan/:id/join', isAuthenticatedUser, joinPackageForm);
+// router.get('/packages-plan/:id/join/payment', paymentPage);
+router.post('/packages-plan/:id/join/payment/:id', isAuthenticatedUser, payment);
 // Exercise
-router.get('/exercises', exercises)
-router.get('/exercise/:category', exerciseCategory)
-router.get('/exercise/:category/:id', exerciseOverview)
+router.get('/exercises', exercises);
+router.get('/exercise/:category', exerciseCategory);
+router.get('/exercise/:category/:id', exerciseOverview);
 
 // router.get('/product/:id', isAuthenticatedUser, productOverviewPage);
 // router.get('/order/:id/shipping', isAuthenticatedUser, shippingPage);

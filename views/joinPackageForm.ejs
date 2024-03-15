@@ -46,6 +46,10 @@
             margin-bottom: 12px;
         }
 
+        #uniqueID:focus {
+            outline: none;
+        }
+
         label {
             display: block;
             margin-bottom: 5px;
@@ -96,28 +100,29 @@
 <body>
     <h2 class="text-center mt-6 text-2xl">Enter all details</h2>
     <section class="container">
-        <form>
+        <form action="/api/v1/packages-plan/<%-data.id%>/join/payment/<%=user%>" method="post">
             <div class="w-full flex gap-8">
                 <div class="form-left">
                     <div class="input-wrapper">
                         <label for="name">Name:</label>
-                        <input type="text" name="name" id="" placeholder="Your Fullname" required>
+                        <input type="text" name="name" id="" placeholder="Your Fullname" requiredd>
                     </div>
 
                     <div class="input-wrapper">
                         <label for="email">Email:</label>
-                        <input type="email" name="email" id="" placeholder="your email@mail.com" required>
+                        <input type="email" name="email" id="" placeholder="your email@mail.com" requiredd>
                     </div>
 
                     <div class="input-wrapper">
                         <label for="">Package Plan:</label>
-                        <input type="text" name="packages-plan" id="" class="cursor-not-allowed" value='<%= data.id %>' readonly>
+                        <input type="text" name="packages-plan" id="" class="cursor-not-allowed" value='<%= data.id %>'
+                            readonly>
                     </div>
 
                     <div class="input-wrapper">
                         <label>Gender:</label>
                         <label for="male">
-                            <input type="radio" id="male" name="gender" value="male" required>
+                            <input type="radio" id="male" name="gender" value="male" requiredd>
                             Male
                         </label>
                         <label for="female">
@@ -132,12 +137,13 @@
 
                     <div class="input-wrapper">
                         <label for="phone">Phone Number:</label>
-                        <input type="tel" name="phone" id="" required>
+                        <input type="tel" name="phone" id="" requiredd>
                     </div>
 
                     <div class="input-wrapper">
                         <label for="phone">Membership Fee:</label>
-                        <input type="number" name="fee" id="" readonly class="cursor-not-allowed" value="<% if (data.id == 'monthlyPlan') { %>1500<% } else if (data.id == 'quaterlyPlan') { %>4000<% } else if (data.id == 'halfyearPlan') { %>7500<% } else if (data.id == 'yearlyPlan') { %>10000<% } else if (data.id == 'strength' || data.id == 'fat-lose' || data.id == 'weight-gain' || data.id == 'physical-fitness') { %>10000<% } else { %>15000<% } %>">
+                        <input type="number" name="fee" id="uniqueID" readonly class="cursor-not-allowed"
+                            value="<% if (data.id == 'monthlyPlan') { %>1500<% } else if (data.id == 'quaterlyPlan') { %>4000<% } else if (data.id == 'halfyearPlan') { %>7500<% } else if (data.id == 'yearlyPlan') { %>10000<% } else if (data.id == 'strength' || data.id == 'fat-lose' || data.id == 'weight-gain' || data.id == 'physical-fitness') { %>10000<% } else { %>15000<% } %>">
 
                     </div>
                 </div>
@@ -145,7 +151,7 @@
                 <div class="form-right">
                     <!-- <div class="input-wrapper">
                         <label for="positions">Education:</label>
-                        <select name="positions" required>
+                        <select name="positions" requiredd>
                             <option value="select">Select</option>
                             <option value="junior-college">Junior College</option>
                             <option value="bachelors">Bachelor's</option>
@@ -155,18 +161,18 @@
 
                     <div class="input-wrapper">
                         <label for="city">City:</label>
-                        <input type="text" name="city" id="" required>
+                        <input type="text" name="city" id="" requiredd>
                     </div>
 
 
                     <div class="input-wrapper">
                         <label for="pin-code">Pin Code:</label>
-                        <input type="number" name="pin-code" id="" required>
+                        <input type="number" name="pin-code" id="" requiredd>
                     </div>
 
                     <div class="input-wrapper">
                         <label for="education">Workout Experience:</label>
-                        <textarea name="experience" id="" rows="3" required></textarea>
+                        <textarea name="experience" id="" rows="3" requiredd></textarea>
                     </div>
 
                     <!-- <div class="input-wrapper">
@@ -190,17 +196,17 @@
                     </div> -->
                     <div class="input-wrapper">
                         <label for="call">Prefered time for call:</label>
-                        <input type="time" name="call" id="" required>
+                        <input type="time" name="call" id="" requiredd>
                     </div>
 
                     <div class="input-wrapper">
                         <label for="resume">Upload Picture:</label>
-                        <input type="file" name="picture" id="" required>
+                        <input type="file" name="picture" id="" requiredd>
                     </div>
                 </div>
             </div>
             <div class="submit">
-                <button class="bg-[#f9ac54]" type="submit">Submit</button>
+                <button class="bg-[#f9ac54]" type="submit">Proceed to Pay</button>
                 <!-- <button class="bg-[#f9ac54]" type="submit">Reset</button> -->
             </div>
         </form>
