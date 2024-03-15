@@ -14,6 +14,7 @@ router.get('/auth/create-password', createPasswordPage);
 router.get('/auth/verify-number', verifyNumberPage);
 router.get('/auth/create-password', createPasswordPage);
 router.get('/programs', programsPage);
+router.get('/programs/:id/join', joinPackageForm);
 router.get('/packages-plan', packagesplanPage);
 router.get('/packages-plan/:id', packagesplanPageOverview)
 router.get('/packages-plan/:id/join', joinPackageForm);

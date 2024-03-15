@@ -111,7 +111,7 @@
 
                     <div class="input-wrapper">
                         <label for="">Package Plan:</label>
-                        <input type="text" name="plan" id="" class="cursor-not-allowed" value='<%= data.id %>' readonly>
+                        <input type="text" name="packages-plan" id="" class="cursor-not-allowed" value='<%= data.id %>' readonly>
                     </div>
 
                     <div class="input-wrapper">
@@ -137,17 +137,9 @@
 
                     <div class="input-wrapper">
                         <label for="phone">Membership Fee:</label>
-                        <input type="number" name="phone" id="" readonly class="cursor-not-allowed" value="3500" >
+                        <input type="number" name="fee" id="" readonly class="cursor-not-allowed" value="<% if (data.id == 'monthlyPlan') { %>1500<% } else if (data.id == 'quaterlyPlan') { %>4000<% } else if (data.id == 'halfyearPlan') { %>7500<% } else if (data.id == 'yearlyPlan') { %>10000<% } else if (data.id == 'strength' || data.id == 'fat-lose' || data.id == 'weight-gain' || data.id == 'physical-fitness') { %>10000<% } else { %>15000<% } %>">
+
                     </div>
-
-
-
-                    <!-- <div class="input-wrapper">
-                        <label for="positions">Package Plan:</label>
-                        <select name="positions" class="cursor-not-allowed" required>
-                            <option value="select">${}</option>
-                        </select>
-                    </div> -->
                 </div>
 
                 <div class="form-right">
@@ -173,8 +165,8 @@
                     </div>
 
                     <div class="input-wrapper">
-                        <label for="education">Work Experience:</label>
-                        <textarea name="" id="" rows="5" required></textarea>
+                        <label for="education">Workout Experience:</label>
+                        <textarea name="experience" id="" rows="3" required></textarea>
                     </div>
 
                     <!-- <div class="input-wrapper">
@@ -196,26 +188,24 @@
                             Testing
                         </label>
                     </div> -->
-
-
-
                     <div class="input-wrapper">
                         <label for="call">Prefered time for call:</label>
                         <input type="time" name="call" id="" required>
                     </div>
 
                     <div class="input-wrapper">
-                        <label for="resume">Upload resume:</label>
-                        <input type="file" name="resume" id="" required>
+                        <label for="resume">Upload Picture:</label>
+                        <input type="file" name="picture" id="" required>
                     </div>
                 </div>
             </div>
             <div class="submit">
                 <button class="bg-[#f9ac54]" type="submit">Submit</button>
-                <button class="bg-[#f9ac54]" type="submit">Reset</button>
+                <!-- <button class="bg-[#f9ac54]" type="submit">Reset</button> -->
             </div>
         </form>
     </section>
+
 </body>
 
 </html>
