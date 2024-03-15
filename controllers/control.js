@@ -86,7 +86,7 @@ exports.programsPage = catchAsyncErrors(async (req, res) => {
 exports.programsPageOverview = catchAsyncErrors(async (req, res) => {
     // console.log(req.params)
     if (req.params.id === 'strength') {
-        return res.render('programOverview', { data: programJsonDataJson.programs[0], params: req.params});
+        return res.render('programOverview', { data: programJsonData.programs[0], params: req.params});
     } if (req.params.id === 'physical-fitness') {
         return res.render('programOverview', { data: programJsonData.programs[1], params: req.params });
     } if (req.params.id === 'fat-loss') {
