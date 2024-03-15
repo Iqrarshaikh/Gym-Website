@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Overview</title>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
+    <style>
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 10px 15px;
+        }
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pt-6 container">
+
+        <!-- Image gallery -->
+        <div class="flex mx-auto justify-center w-full py-8">
+            <div class=" sm:rounded-lg w-2/5 flex justify-center">
+                <img src='<%= data.image %>'
+                    alt="Model wearing plain white basic tee." width="350px" class="object-cover object-center ">
+            </div>
+
+            <div class="mt-4 lg:row-span-3 lg:mt-0 w-1/2 flex flex-col justify-center">
+                <h2 class="">Program Information</h2>
+                <p class="text-3xl tracking-tight">₹<%= data.price %>
+                </p>
+
+                <!-- Reviews -->
+                <div class="mt-6">
+                    <h3 class="sr-only">Reviews</h3>
+                    <div class="flex items-center">
+                        <div class="flex items-center">
+                            <!-- Active: "text-gray-900", Default: "text-gray-200" -->
+                            <svg class="text-blue-600 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <svg class="text-blue-600 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <svg class="text-blue-600 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <svg class="text-blue-600 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <svg class="text-gray-200 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <p class="sr-only">4 out of 5 stars</p>
+                        <a href="#" class="ml-3 text-sm font-medium text-yellow-500 hover:text-indigo-500">117
+                            reviews</a>
+                    </div>
+                </div>
+                <div>
+
+
+                    <div class="lg:col-span-2 lg:pr-8">
+                        <h1 class="text-2xl font-bold tracking-tight sm:text-3xl">
+                            <%= data.title %>
+                        </h1>
+                    </div>
+                    <div>
+                        <h3 class="sr-only">Description</h3>
+
+                        <div class="space-y-6">
+                            <p class="text-base">
+                                <%= data.description %>
+                            </p>
+                        </div>
+                        <a type="submit" href="/api/v1/packages-plan/<%= params.id %>/join"
+                            class="mt-10 flex items-center justify-center rounded-md border border-transparent px-8 py-3 font-medium text-white bg-[#f9ac54] focus:outline-none focus:ring-2 focus:ring-indigo-500  focus:ring-offset-2 w-2/5">Join
+                            Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Options -->
+        <div
+            class="py-10 lg:col-span-2 lg:col-start-1 lg:pb-16 lg:pr-8 lg:pt-6 flex  px-8">
+            <!-- Description and details -->
+
+
+            <div class="w-2/5 ml-14">
+                <h3 class="text-sm font-medium">Highlights</h3>
+
+                <div class="mt-4">
+                    <ul role="list" class="list-disc space-y-2 pl-4 text-sm">
+                        <% data.highlights.forEach((e,i)=>{ %>
+                            <li class=""><%= e %></li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="w-2/5">
+                <h2 class="text-sm font-medium">Details</h2>
+
+                <div class="mt-4 space-y-6">
+                    <p class="text-sm"><%= data.details %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

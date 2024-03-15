@@ -1,0 +1,60 @@
+{
+    "programs": [
+        {
+            "id": 1,
+            "title": "Strength",
+            "description": "Experience the benefits of our gym facilities for 1 month. Access state-of-the-art equipment, join exciting fitness classes, and kickstart your fitness journey. Stay motivated and achieve your goals with our supportive community.",
+            "image": "/static/img/gymPlans/img4.jpg",
+            "price": 10000,
+            "highlights": [
+                "1 month access to gym facilities",
+                "State-of-the-art equipment",
+                "Exciting fitness classes",
+                "Supportive community"
+            ],
+            "details": "Ideal for those looking to try out our gym and experience the benefits for a short duration. Flexible membership options available after the trial period."
+        },
+        {
+            "id": 2,
+            "title": "Physical Fitness",
+            "description": "Commit to your fitness goals with a 3-month membership. Enjoy unlimited access to our gym facilities, including personalized workout plans and expert guidance. Elevate your fitness routine and witness positive transformations.",
+            "image": "/static/img/gymPlans/img1.jpg",
+            "price": 10000,
+            "highlights": [
+                "3 months unlimited access",
+                "Personalized workout plans",
+                "Expert guidance",
+                "Positive transformations"
+            ],
+            "details": "Perfect for those who want a longer commitment with additional personalized support for their fitness journey. Access to nutritional guidance and diet planning for a holistic approach."
+        },
+        {
+            "id": 3,
+            "title": "Fat Lose",
+            "description": "Embark on a fitness journey with our 6-month membership. Benefit from extended access to top-notch gym amenities, wellness programs, and exclusive member events. Make a lasting commitment to a healthier, happier you.",
+            "image": "/static/img/gymPlans/img2.jpg",
+            "price": 10000,
+            "highlights": [
+                "6 months extended access",
+                "Top-notch gym amenities",
+                "Wellness programs",
+                "Exclusive member events"
+            ],
+            "details": "For those seeking a more extended commitment with added wellness programs and exclusive events. Complimentary fitness assessments and progress tracking."
+        },
+        {
+            "id": 4,
+            "title": "Weight Gain",
+            "description": "Transform your lifestyle with our 1-year membership. Enjoy uninterrupted access to our gym, receive personalized training plans, and become part of a thriving fitness community. Invest in your well-being for a year of positive change.",
+            "image": "/static/img/gymPlans/img5.jpg",
+            "price": 10000,
+            "highlights": [
+                "1 year uninterrupted access",
+                "Personalized training plans",
+                "Thriving fitness community",
+                "Positive lifestyle change"
+            ],
+            "details": "A comprehensive package for a year-long commitment to health and fitness with personalized support. Exclusive member-only events and discounts on additional services."
+        }
+    ]
+}

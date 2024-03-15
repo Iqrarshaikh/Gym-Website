@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const packageJsonData = require('.././packageData.json')
 const exerciseJsonData = require('.././exerciseData.json')
+const programJsonData = require('../programData.json')
+console.log(programJsonData.programs[0])
 
 //GET
 exports.loginPage = catchAsyncErrors(
@@ -76,9 +78,28 @@ exports.categoryPage = catchAsyncErrors(async (req, res) => {
     res.render('category', { layout: 'category' });
 
 });
+
 exports.programsPage = catchAsyncErrors(async (req, res) => {
     res.render('programs', { layout: 'programs' });
 });
+
+exports.programsPageOverview = catchAsyncErrors(async (req, res) => {
+    // console.log(req.params)
+    if (req.params.id === 'strength') {
+        return res.render('programOverview', { data: programJsonDataJson.programs[0], params: req.params});
+    } if (req.params.id === 'physical-fitness') {
+        return res.render('programOverview', { data: programJsonData.programs[1], params: req.params });
+    } if (req.params.id === 'fat-loss') {
+        return res.render('programOverview', { data: programJsonData.programs[2], params: req.params });
+    } if (req.params.id === 'weight-gain') {
+        return res.render('programOverview', { data: programJsonData.programs[3], params: req.params });
+    }
+    else {
+        res.redirect('/')
+    }
+
+});
+
 exports.packagesplanPage = catchAsyncErrors(async (req, res) => {
     res.render('packagesPlan', { layout: 'packagesPlan' });
 });
