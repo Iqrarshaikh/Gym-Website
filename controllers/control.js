@@ -4,10 +4,10 @@ const userModel = require("../models/userModel");
 // const productModel = require("../models/productModel");
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const packageJsonData = require('.././packageData.json')
-const exerciseJsonData = require('.././exerciseData.json')
-const programJsonData = require('../programData.json')
-console.log(programJsonData.programs[0])
+const packageJsonData = require('.././packageData.json');
+const exerciseJsonData = require('.././exerciseData.json');
+const programJsonData = require('../programData.json');
+console.log(programJsonData.programs[0]);
 
 //GET
 exports.loginPage = catchAsyncErrors(
@@ -85,18 +85,23 @@ exports.programsPage = catchAsyncErrors(async (req, res) => {
 
 exports.programsPageOverview = catchAsyncErrors(async (req, res) => {
     // console.log(req.params)
-    if (req.params.id === 'strength') {
-        return res.render('programOverview', { data: programJsonDataJson.programs[0], params: req.params});
-    } if (req.params.id === 'physical-fitness') {
-        return res.render('programOverview', { data: programJsonData.programs[1], params: req.params });
-    } if (req.params.id === 'fat-loss') {
-        return res.render('programOverview', { data: programJsonData.programs[2], params: req.params });
-    } if (req.params.id === 'weight-gain') {
-        return res.render('programOverview', { data: programJsonData.programs[3], params: req.params });
+    if (req.user) {
+        if (req.params.id === 'strength') {
+            return res.render('programOverview', { data: programJsonData.programs[0], params: req.params, user: req.user });
+        } if (req.params.id === 'physical-fitness') {
+            return res.render('programOverview', { data: programJsonData.programs[1], params: req.params, user: req.user });
+        } if (req.params.id === 'fat-loss') {
+            return res.render('programOverview', { data: programJsonData.programs[2], params: req.params, user: req.user });
+        } if (req.params.id === 'weight-gain') {
+            return res.render('programOverview', { data: programJsonData.programs[3], params: req.params, user: req.user });
+        }
+        else {
+            res.redirect('/');
+        }
+    } else {
+        res.redirect('/');
     }
-    else {
-        res.redirect('/')
-    }
+
 
 });
 
@@ -107,24 +112,38 @@ exports.packagesplanPage = catchAsyncErrors(async (req, res) => {
 exports.packagesplanPageOverview = catchAsyncErrors(async (req, res) => {
     // console.log(req.params)
     if (req.params.id === 'monthlyPlan') {
-        return res.render('packageOverview', { data: packageJsonData.packages[0], params: req.params});
+        return res.render('packageOverview', { data: packageJsonData.packages[0], params: req.params });
     } if (req.params.id === 'quaterlyPlan') {
         return res.render('packageOverview', { data: packageJsonData.packages[1], params: req.params });
     } if (req.params.id === 'halfYearPlan') {
         return res.render('packageOverview', { data: packageJsonData.packages[2], params: req.params });
     } if (req.params.id === 'yearlyPlan') {
         return res.render('packageOverview', { data: packageJsonData.packages[3], params: req.params });
-    }if (req.params.id === 'premiumPlan') {
+    } if (req.params.id === 'premiumPlan') {
         return res.render('packageOverview', { data: packageJsonData.packages[4], params: req.params });
     }
     else {
-        res.redirect('/')
+        res.redirect('/');
     }
 
 });
+exports.paymentPage = catchAsyncErrors(async (req, res) => {
+    console.log('Working');
+    res.render('payment', { layout: 'payment.ejs' });
+});
+exports.payment = catchAsyncErrors(async (req, res) => {
+    console.log('Working');
 
+    res.render('payment', { layout: 'payment.ejs' });
+});
 exports.joinPackageForm = catchAsyncErrors(async (req, res) => {
-    res.render('joinPackageForm' ,{data: req.params});
+    console.log(req.user);
+    if (req.user) {
+        res.render('joinPackageForm', { data: req.params, user: req.user.id });
+
+    } else {
+        res.redirect('/');
+    }
 });
 
 exports.exercises = catchAsyncErrors(async (req, res) => {
@@ -133,20 +152,20 @@ exports.exercises = catchAsyncErrors(async (req, res) => {
 
 exports.exerciseCategory = catchAsyncErrors(async (req, res) => {
 
-    const category= req.params.category
+    const category = req.params.category;
 
     if (req.params.category === 'type') {
-        return res.render('exerciseCategory', { data: exerciseJsonData.type, category});
+        return res.render('exerciseCategory', { data: exerciseJsonData.type, category });
     } if (req.params.category === 'muscle') {
-        return res.render('exerciseCategory', { data: exerciseJsonData.muscle, category});
+        return res.render('exerciseCategory', { data: exerciseJsonData.muscle, category });
     } if (req.params.category === 'difficulty') {
-        return res.render('exerciseCategory', { data: exerciseJsonData.difficulty, category});
+        return res.render('exerciseCategory', { data: exerciseJsonData.difficulty, category });
     }
 });
 
 exports.exerciseOverview = catchAsyncErrors(async (req, res) => {
-    console.log(req.params)
-    res.render('exerciseOverview', {category: req.params.category,id:req.params.id})
+    console.log(req.params);
+    res.render('exerciseOverview', { category: req.params.category, id: req.params.id });
 });
 
 
